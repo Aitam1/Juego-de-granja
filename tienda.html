@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="panel-tienda">
+
+        <h1 class="titulo-principal">🛒 Tienda de la Granja</h1>
+
+        <p class="el-dinero">💰 Dinero: $<span id="dinero"></span></p>
+
+        <!-- Sección comprar semillas -->
+        <h2 class="titulo-seccion">🌱 Comprar Semillas</h2>
+        <div class="tienda" id="seccion-comprar">
+            <!-- Las tarjetas se generan desde tienda.js -->
+        </div>
+
+        <!-- Sección vender semillas del inventario -->
+        <h2 class="titulo-seccion">💰 Vender del Inventario</h2>
+        <div class="tienda" id="seccion-vender">
+            <!-- Las tarjetas se generan desde tienda.js -->
+        </div>
+
+        <button id="volver">⬅ Volver al juego</button>
+
+    </main>
+
+    <script type="module" src="js/tienda.js"></script>
+
+</body>
+</html>

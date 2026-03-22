@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Granja</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="juego-container">
+
+        <!-- Panel izquierdo: info del jugador, inventario y herramientas -->
+        <div class="panel-jugador">
+
+            <h2>Información del Granjero</h2>
+            <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+            <p><strong>Dificultad:</strong> <span id="dificultad"></span></p>
+            <p><strong>Dinero:</strong> 💰 <span id="dinero"></span></p>
+            <p><strong>Energía:</strong> ⚡ <span id="energia"></span></p>
+
+            <hr>
+
+            <h2>🎒 Inventario</h2>
+            <!-- Se rellena desde juego.js con mostrarInventario() -->
+            <div id="inventario-lista"></div>
+
+            <hr>
+
+            <h2>🔧 Herramientas</h2>
+            <!-- Se rellena desde juego.js con mostrarHerramientas() -->
+            <div id="herramientas-lista"></div>
+
+            <button id="volver-menu">Volver al menú</button>
+
+        </div>
+
+        <!-- Panel derecho: terreno y selector de semillas -->
+        <div class="terreno">
+
+            <!-- Selector de semillas -->
+            <div class="selector-semillas">
+                <h3>Selecciona una semilla:</h3>
+                <!-- data-nombre debe coincidir con el nombre en semillas.js -->
+                <button class="semilla" data-nombre="Trigo">🌾 Trigo</button>
+                <button class="semilla" data-nombre="Zanahoria">🥕 Zanahoria</button>
+                <button class="semilla" data-nombre="Tomate">🍅 Tomate</button>
+                <button class="semilla" data-nombre="Maíz">🌽 Maíz</button>
+            </div>
+
+            <h2>Terreno</h2>
+
+            <!-- Grid de 12 parcelas (4 columnas x 3 filas) -->
+            <div class="grid-terreno">
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+                <div class="parcela"></div>
+            </div>
+
+            <button id="ir-tienda">🛒 Ir a la tienda</button>
+            <button id="descansar">💤 Descansar (+25 energía)</button>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="js/juego.js"></script>
+
+</body>
+</html>

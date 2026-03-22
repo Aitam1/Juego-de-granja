@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurar Nueva Partida</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="configuracion">
+
+        <h1>Configurar Nueva Partida</h1>
+
+        <form id="form-configuracion">
+
+            <label for="nombre-granjero">Nombre del Granjero:</label>
+            <input type="text" id="nombre-granjero" placeholder="Escribe tu nombre" required>
+
+            <label for="dificultad">Dificultad:</label>
+            <select id="dificultad" required>
+                <option value="">Selecciona dificultad</option>
+                <option value="facil">Fácil</option>
+                <option value="normal">Normal</option>
+                <option value="dificil">Difícil</option>
+            </select>
+
+            <label for="dinero">Dinero Inicial:</label>
+            <input type="number" id="dinero" min="10" max="1000" value="100" required>
+
+            <label for="energia">Energía Inicial:</label>
+            <input type="number" id="energia" min="10" max="100" value="50" required>
+
+            <!-- Mensaje de error: oculto por defecto, aparece si hay errores -->
+            <p id="mensaje-error" style="color:#ff6b6b; display:none;"></p>
+
+            <button type="submit">Comenzar Partida</button>
+
+        </form>
+
+    </main>
+
+    <script type="module" src="js/configuracion.js"></script>
+
+</body>
+</html>
