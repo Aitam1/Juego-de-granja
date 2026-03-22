@@ -43,5 +43,5 @@ btnEliminar.addEventListener("click", () => {
 
 // Botón GitHub → abre el repositorio en una nueva pestaña
 btnGitHub.addEventListener("click", () => {
-    window.open("https://github.com/", "_blank");
+    window.open("https://github.com/Aitam1/Juego-de-granja", "_blank");
 });
