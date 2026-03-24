@@ -338,6 +338,21 @@ parcelas.forEach((parcela, index) => {
                 return;
             }
 
+
+            // NUEVO APARTADO ==> Probabilidad de fallo al plantar
+            const fallo = Math.random();
+
+            if(fallo < 0.3) {
+                // Si hay fallo, quitamos la semilla con "usarSemilla()" del inventario y salimos con return sin plantar nada.
+                granjero.usarSemilla(semillaSeleccionada);
+                mostrarInventario();
+                guardar();
+                alert("La semilla ha fallado al plantarse. Se ha perdido.");
+                return;
+            }
+            // Si no hay fallo, continuamos plantando normalmente. . . 
+
+
             // Buscamos los datos de la semilla en nuestra lista
             const datosSemilla = semillas.find(s => s.nombre === semillaSeleccionada);
 
@@ -499,3 +514,20 @@ mostrarDatosJugador();
 mostrarInventario();
 mostrarHerramientas();
 parcelas.forEach((_, i) => mostrarParcela(i));
+
+
+// NUEVO: Tutorial la primera vez que se entra
+    if (!localStorage.getItem("tutorialVisto")) {
+        alert(
+            " ===== Bienvenido a tu Granja! =====\n\n" +
+            " ===== COMO JUGAR: =====\n" +
+            "1. Ve a la Tienda y compra semillas.\n" +
+            "2. Selecciona una semilla del panel.\n" +
+            "3. Haz clic en una parcela para plantar.\n" +
+            "4. Espera a que madure y cosecharas\n" +
+            "5. Vende las cosechas para ganar dinero."
+            );
+        
+        // Guardamos que ya se ha visto el tutorial
+        localStorage.setItem("tutorialVisto", "si");
+    }

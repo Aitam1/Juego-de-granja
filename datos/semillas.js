@@ -13,7 +13,10 @@ const semillas = [
     { nombre: "Trigo",     emoji: "🌾", precio: 10, venta: 25,  tiempo: 10 },
     { nombre: "Zanahoria", emoji: "🥕", precio: 15, venta: 35,  tiempo: 15 },
     { nombre: "Tomate",    emoji: "🍅", precio: 20, venta: 50,  tiempo: 20 },
-    { nombre: "Maíz",      emoji: "🌽", precio: 25, venta: 65,  tiempo: 25 }
+    { nombre: "Maíz",      emoji: "🌽", precio: 25, venta: 65,  tiempo: 25 },
+
+    // NUEVA SEMILLA
+    { nombre: "Kiwi",      emoji: "🥝", precio: 30, venta: 80,  tiempo: 30 }
 ];
 
 // Exportamos para poder usarlas en otros archivos
