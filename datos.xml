@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<granja xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datos.xsd">
+    
+
+    <!-- LAS SEMILLAS -->
+    <semillas>
+
+        <semilla id = "s1">
+            <nombre>Trigo</nombre>
+            <emoji>🌾</emoji>
+            <precioCompra>10</precioCompra>
+            <precioVenta>25</precioVenta>
+            <tiempoMaduracion>10</tiempoMaduracion>
+        </semilla>
+
+        <semilla id = "s2">
+            <nombre>Zanahoria</nombre>
+            <emoji>🥕</emoji>
+            <precioCompra>15</precioCompra>
+            <precioVenta>35</precioVenta>
+            <tiempoMaduracion>15</tiempoMaduracion>
+        </semilla>
+
+        <semilla id = "s3">
+            <nombre>Tomate</nombre>
+            <emoji>🍅</emoji>
+            <precioCompra>20</precioCompra>
+            <precioVenta>50</precioVenta>
+            <tiempoMaduracion>20</tiempoMaduracion>
+        </semilla>
+
+        <semilla id = "s4">
+            <nombre>Maíz</nombre>
+            <emoji>🌽</emoji>
+            <precioCompra>25</precioCompra>
+            <precioVenta>65</precioVenta>
+            <tiempoMaduracion>25</tiempoMaduracion>
+        </semilla>
+
+        <semilla id = "s5">
+            <nombre>Kiwi</nombre>
+            <emoji>🥝</emoji>
+            <precioCompra>30</precioCompra>
+            <precioVenta>80</precioVenta>
+            <tiempoMaduracion>30</tiempoMaduracion>
+        </semilla>
+
+    </semillas>
+
+
+    <!-- LAS HERRAMIENTAS-->
+    <herramientas>
+
+        <herramienta id = "h1">
+            <nombre>Azada</nombre>
+            <emoji>🪓</emoji>
+            <tipoEfecto>multiplica el precio de venta al cosechar</tipoEfecto>
+            <niveles>
+                <nivel>
+                    <nombreNivel>Basica</nombreNivel>
+                    <costo>0</costo>
+                    <efecto>1.0</efecto>
+                </nivel>
+
+                <nivel>
+                    <nombreNivel>Mejorada</nombreNivel>
+                    <costo>80</costo>
+                    <efecto>1.3</efecto>
+                </nivel>
+
+                <nivel>
+                    <nombreNivel>Maestra</nombreNivel>
+                    <costo>200</costo>
+                    <efecto>1.6</efecto>
+                </nivel>
+            </niveles>
+        </herramienta>
+
+
+        <herramienta id = "h2">
+            <nombre>Regadera</nombre>
+            <emoji>🪣</emoji>
+            <tipoEfecto>reduce el tiempo de maduracion de las plantas</tipoEfecto>
+            <niveles>
+                <nivel>
+                    <nombreNivel>Basica</nombreNivel>
+                    <costo>0</costo>
+                    <efecto>1.0</efecto>
+                </nivel>
+
+                <nivel>
+                    <nombreNivel>Mejorada</nombreNivel>
+                    <costo>80</costo>
+                    <efecto>0.7</efecto>
+                </nivel>
+
+                <nivel>
+                    <nombreNivel>Maestra</nombreNivel>
+                    <costo>200</costo>
+                    <efecto>0.5</efecto>
+                </nivel>
+            </niveles>
+        </herramienta>
+
+
+        <herramienta id = "h3">
+            <nombre>Hoz</nombre>
+            <emoji>🌙</emoji>
+            <tipoEfecto>multiplica los frutos obtenidos al cosechar</tipoEfecto>
+            <niveles>
+                <nivel>
+                    <nombreNivel>Basica</nombreNivel>
+                    <costo>0</costo>
+                    <efecto>1.0</efecto>
+                </nivel>
+
+                <nivel>
+                    <nombreNivel>Mejorada</nombreNivel>
+                    <costo>80</costo>
+                    <efecto>1.3</efecto>
+                </nivel>
+
+                <nivel>
+                    <nombreNivel>Maestra</nombreNivel>
+                    <costo>200</costo>
+                    <efecto>1.6</efecto>
+                </nivel>
+            </niveles>
+        </herramienta>
+
+    </herramientas>
+
+</granja>
