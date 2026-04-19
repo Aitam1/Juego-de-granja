@@ -6,7 +6,7 @@
     <!-- LAS SEMILLAS -->
     <semillas>
 
-        <semilla id = "s1">
+        <semilla idSemilla = "s1">
             <nombre>Trigo</nombre>
             <emoji>🌾</emoji>
             <precioCompra>10</precioCompra>
@@ -14,7 +14,7 @@
             <tiempoMaduracion>10</tiempoMaduracion>
         </semilla>
 
-        <semilla id = "s2">
+        <semilla idSemilla = "s2">
             <nombre>Zanahoria</nombre>
             <emoji>🥕</emoji>
             <precioCompra>15</precioCompra>
@@ -22,7 +22,7 @@
             <tiempoMaduracion>15</tiempoMaduracion>
         </semilla>
 
-        <semilla id = "s3">
+        <semilla idSemilla = "s3">
             <nombre>Tomate</nombre>
             <emoji>🍅</emoji>
             <precioCompra>20</precioCompra>
@@ -30,7 +30,7 @@
             <tiempoMaduracion>20</tiempoMaduracion>
         </semilla>
 
-        <semilla id = "s4">
+        <semilla idSemilla = "s4">
             <nombre>Maíz</nombre>
             <emoji>🌽</emoji>
             <precioCompra>25</precioCompra>
@@ -38,7 +38,7 @@
             <tiempoMaduracion>25</tiempoMaduracion>
         </semilla>
 
-        <semilla id = "s5">
+        <semilla idSemilla = "s5">
             <nombre>Kiwi</nombre>
             <emoji>🥝</emoji>
             <precioCompra>30</precioCompra>
@@ -52,9 +52,9 @@
     <!-- LAS HERRAMIENTAS-->
     <herramientas>
 
-        <herramienta id = "h1">
-            <nombre>Azada</nombre>
-            <emoji>🪓</emoji>
+        <herramienta idHerramienta = "h1">
+            <nombreH>Azada</nombreH>
+            <emojiH>🪓</emojiH>
             <tipoEfecto>multiplica el precio de venta al cosechar</tipoEfecto>
             <niveles>
                 <nivel>
@@ -78,9 +78,9 @@
         </herramienta>
 
 
-        <herramienta id = "h2">
-            <nombre>Regadera</nombre>
-            <emoji>🪣</emoji>
+        <herramienta idHerramienta = "h2">
+            <nombreH>Regadera</nombreH>
+            <emojiH>🪣</emojiH>
             <tipoEfecto>reduce el tiempo de maduracion de las plantas</tipoEfecto>
             <niveles>
                 <nivel>
@@ -104,9 +104,9 @@
         </herramienta>
 
 
-        <herramienta id = "h3">
-            <nombre>Hoz</nombre>
-            <emoji>🌙</emoji>
+        <herramienta idHerramienta = "h3">
+            <nombreH>Hoz</nombreH>
+            <emojiH>🌙</emojiH>
             <tipoEfecto>multiplica los frutos obtenidos al cosechar</tipoEfecto>
             <niveles>
                 <nivel>
