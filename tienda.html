@@ -10,6 +10,17 @@
 
     <main class="panel-tienda">
 
+
+        <!-- Filtro de semillas -->
+        <label for="filtro">🔍 Filtrar semillas:</label>
+        <select id="filtro">
+            <option value="todos">Todas</option>
+            <option value="baratas">Precio menor a 20</option>
+            <option value="caras">Precio mayor a 15</option>
+            <option value="rapidas">Tiempo menor a 20s</option>
+            <option value="rentables">Precio venta mayor a 50</option>
+        </select>
+
         <h1 class="titulo-principal">🛒 Tienda de la Granja</h1>
 
         <p class="el-dinero">💰 Dinero: $<span id="dinero"></span></p>
@@ -30,6 +41,7 @@
 
     </main>
 
+    <script src="lectorxml.js"></script>
     <script type="module" src="js/tienda.js"></script>
 
 </body>

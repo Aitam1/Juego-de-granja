@@ -39,7 +39,7 @@
     <xs:element name = "precioCompra">
         <xs:simpleType>
             <xs:restriction base = "xs:int">
-                <xs:pattern value = "[0-9]{2}"></xs:pattern>
+                <xs:pattern value = "[0-9]+"></xs:pattern>
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
@@ -47,7 +47,7 @@
     <xs:element name = "precioVenta">
         <xs:simpleType>
             <xs:restriction base = "xs:int">
-                <xs:pattern value = "[0-9]{2}"></xs:pattern>
+                <xs:pattern value = "[0-9]+"></xs:pattern>
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
@@ -55,7 +55,7 @@
     <xs:element name = "tiempoMaduracion">
         <xs:simpleType>
             <xs:restriction base = "xs:int">
-                <xs:pattern value = "[0-9]{2}"></xs:pattern>
+                <xs:pattern value = "[0-9]+"></xs:pattern>
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
