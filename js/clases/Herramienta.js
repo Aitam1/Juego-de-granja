@@ -15,10 +15,17 @@ class Herramienta {
         this.emoji       = emoji;
         this.niveles     = niveles;
         this.nivelActual = 0; // Empezamos siempre en nivel 0 (Básica)
+
+        // NUEVA PROPIEDAD : Si la herramienta esta rota, no se puede usar.
+        this.rota        = false;
     }
 
     // Devuelve el efecto del nivel actual (multiplicador)
     efecto() {
+
+        // NUEVO : Si la herramienta esta rota, no tiene efecto.
+        if (this.rota) return 1.0;
+
         return this.niveles[this.nivelActual].efecto;
     }
 
@@ -40,6 +47,23 @@ class Herramienta {
             return true;
         }
         return false;
+    }
+
+    // === APARTADOS NUEVOS ===
+
+    // NUEVO : Romper la herramienta (no se puede usar hasta que se repare)
+    romper() {
+        this.rota = true;
+    }
+
+    // NUEVO : Reparar la heramienta (vuelve a funcionar)
+    reparar() {
+        this.rota = false;
+    }
+
+    // NUEVO : Devuelve true si la herramienta se puede usar
+    estaFuncional() {
+        return !this.rota;
     }
 }
 

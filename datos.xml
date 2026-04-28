@@ -46,6 +46,17 @@
             <tiempoMaduracion>30</tiempoMaduracion>
         </semilla>
 
+
+        
+        <!-- NUEVA SEMILLA -->
+        <semilla idSemilla = "s6">
+            <nombre>Fresa</nombre>
+            <emoji>🍓</emoji>
+            <precioCompra>35</precioCompra>
+            <precioVenta>95</precioVenta>
+            <tiempoMaduracion>35</tiempoMaduracion>
+        </semilla>
+
     </semillas>
 
 

@@ -65,9 +65,12 @@ const hoz = new Herramienta("Hoz", "🌙", [
 // Si había herramientas guardadas, restauramos sus niveles
 const herrsGuardadas = datosGuardados.herramientas;
 if (herrsGuardadas) {
-    azada.nivelActual    = herrsGuardadas.azada    || 0;
-    regadera.nivelActual = herrsGuardadas.regadera || 0;
-    hoz.nivelActual      = herrsGuardadas.hoz      || 0;
+    azada.nivelActual    = herrsGuardadas.azada    ? herrsGuardadas.azada.nivel    : 0;
+    azada.rota           = herrsGuardadas.azada    ? herrsGuardadas.azada.rota     : false;
+    regadera.nivelActual = herrsGuardadas.regadera ? herrsGuardadas.regadera.nivel : 0;
+    regadera.rota        = herrsGuardadas.regadera ? herrsGuardadas.regadera.rota  : false;
+    hoz.nivelActual      = herrsGuardadas.hoz      ? herrsGuardadas.hoz.nivel      : 0;
+    hoz.rota             = herrsGuardadas.hoz      ? herrsGuardadas.hoz.rota       : false;
 }
 
 
@@ -130,6 +133,24 @@ const ENERGIA_PLANTAR  = 5;
 const ENERGIA_COSECHAR = 2;
 
 
+
+
+// NUEVO APARTADO : PROBABILIDAD DE QUE SE ROMPE UNA HERRAMIENTA
+
+const PROB_ROMPERSE = 0.05; // 5% de probabilidad
+
+// Funcion para intentar romper una herramienta
+function intentarRomper(herramienta) {
+    if (herramienta.rota) return;
+    if (Math.random() < PROB_ROMPERSE) {
+        herramienta.romper();
+        alert(`❌ ¡La ${herramienta.nombre} se ha roto! Ve a la tienda o al panel de herramientas para repararla.`);
+        mostrarHerramientas();
+        guardar();
+    }
+}
+
+
 // ============================================================
 // 7. FUNCIONES PARA ACTUALIZAR LA PANTALLA
 // ============================================================
@@ -177,19 +198,24 @@ function mostrarHerramientas() {
 
     lista.forEach(({ obj, clave, desc }) => {
         const costo = obj.costoMejora();
+        const estado = obj.rota ? " (ROTA)" : "";
 
         const div = document.createElement("div");
         div.className = "herramienta-item";
         div.innerHTML = `
-            <span>${obj.emoji} <strong>${obj.nombre}</strong> — ${obj.nombreNivel()}</span>
+            <span>${obj.emoji} <strong>${obj.nombre}</strong> — ${obj.nombreNivel()}${estado}</span>
             <small>${desc}</small>
             <button class="btn-mejorar" data-clave="${clave}"
-                ${costo === null ? "disabled" : ""}>
+                ${costo === null || obj.rota ? "disabled" : ""}>
                 ${costo === null ? "Máximo" : `Mejorar ($${costo})`}
             </button>
+
+
+            ${obj.rota ? `<button class="btn-reparar" data-clave="${clave}">Reparar ($50)</button>` : ""}
         `;
         panelHerramientas.appendChild(div);
     });
+
 
     // Evento para cada botón de mejorar
     document.querySelectorAll(".btn-mejorar").forEach(btn => {
@@ -211,6 +237,32 @@ function mostrarHerramientas() {
                 alert(`✅ ${herramienta.nombre} mejorada a: ${herramienta.nombreNivel()}`);
             } else {
                 alert(`❌ Necesitas $${costo} para mejorar.`);
+            }
+        });
+    });
+
+
+
+
+
+    // Evento para cada botón de reparar
+    document.querySelectorAll(".btn-reparar").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const clave = this.dataset.clave;
+
+            // Buscamos la herramienta por su clave
+            const herramienta = clave === "azada" ? azada
+                                : clave === "regadera" ? regadera
+                                : hoz;
+
+            if (granjero.gastarDinero(50)) {
+                herramienta.reparar();
+                guardar();
+                mostrarDatosJugador();
+                mostrarHerramientas(); // Redibujamos el panel
+                alert(`✅ ${herramienta.nombre} reparada.`);
+            } else {
+                alert("❌ Necesitas $50 para reparar.");
             }
         });
     });
@@ -260,9 +312,9 @@ function guardar() {
         inventario: granjero.inventario,
         // Guardamos el nivel actual de cada herramienta
         herramientas: {
-            azada:    azada.nivelActual,
-            regadera: regadera.nivelActual,
-            hoz:      hoz.nivelActual
+            azada:    { nivel: azada.nivelActual, rota: azada.rota },
+            regadera: { nivel: regadera.nivelActual, rota: regadera.rota },
+            hoz:      { nivel: hoz.nivelActual, rota: hoz.rota }
         }
     }));
 
@@ -380,6 +432,14 @@ parcelas.forEach((parcela, index) => {
             mostrarDatosJugador();
             mostrarInventario();
             guardar();
+
+
+
+
+            // NUEVO : Intentar romper la regadera al usarla
+            intentarRomper(regadera);
+
+
 
             // Timer: cuando madure, actualizamos la parcela automáticamente
             setTimeout(() => {
